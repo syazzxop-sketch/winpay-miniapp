@@ -72,6 +72,8 @@ elif text in [
     elif text == "🎁 Bonus Offers":
         await update.message.reply_text(
             """🎉 *WINPAY Extra Bonus*
+              reply_markup=payment_menu()
+)
 
 ━━━━━━━━━━━━━━━━
 
