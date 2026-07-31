@@ -51,23 +51,19 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif text in [
-        "✅ ₹500",
-        "✅ ₹1000",
-        "✅ ₹2000",
-        "✅ ₹2500",
+        "₹500 ✅",
+        "₹1000 ✅",
+        "₹2000 ✅",
     ]:
 
-        if text == "✅ ₹500":
+        if text == "₹500 ✅":
             bonus = "🎁 +₹98"
 
-        elif text == "✅ ₹1000":
+        elif text == "₹1000 ✅":
             bonus = "🎁 +₹198"
 
-        elif text == "✅ ₹2000":
+        elif text == "₹2000 ✅":
             bonus = "🎁 +₹298"
-
-        else:
-            bonus = "🎁 +₹398"
 
         await update.message.reply_text(
             f"""💰 *Deposit : {text.replace("✅ ","")}*
