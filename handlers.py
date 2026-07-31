@@ -38,18 +38,30 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Deposit
     if text == "⚡ Deposit (UPI)":
+    elif text in ["💰 ₹500+98","💰 ₹1000+198","💰 ₹2000+298","💰 ₹3000+398","💰 ₹4000+401","💰 ₹5000+505"]:
+
+    amount = text.replace("💰 ","")
+
     await update.message.reply_text(
-        "💰 *Select Deposit Amount*",
-        parse_mode="Markdown",
-        reply_markup=deposit_menu()
-    )
-        await update.message.reply_text(
-            "⚡ *Deposit (UPI)*\n\n"
-            "🏦 UPI ID:\n"
-            "`mikacswinpay-1@oksbi`\n\n"
-            "✅ Send Payment Screenshot to Customer Support. @miss_AnjaliWS",
-            parse_mode="Markdown"
-        )
+f"""💰 *Deposit : {amount}*
+
+🏦 UPI ID
+
+`mikacswinpay-1@oksbi`
+
+━━━━━━━━━━━━━━
+
+1️⃣ Pay the amount.
+
+2️⃣ Copy the UPI.
+
+3️⃣ Send Screenshot.
+
+✅ Balance will be added after verification @miss_AnjaliWS thank you .
+""",
+parse_mode="Markdown",
+reply_markup=payment_menu()
+)
 
     # Bonus
     elif text == "🎁 Bonus Offers":
@@ -58,16 +70,16 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ━━━━━━━━━━━━━━━━
 
-✅ ₹500   ➜   🎁 ₹625
-✅ ₹1000  ➜   🎁 ₹1356
-✅ ₹1500  ➜   🎁 ₹1751
-✅ ₹2000  ➜   🎁 ₹2411
-✅ ₹2500  ➜   🎁 ₹2806
-✅ ₹3000  ➜   🎁 ₹3454
-✅ ₹3500  ➜   🎁 ₹4009
-✅ ₹4000  ➜   🎁 ₹4563
-✅ ₹4500  ➜   🎁 ₹4987
-✅ ₹5000  ➜   🎁 ₹5521
+✅ ₹500   ➜   🎁 ₹598
+✅ ₹1000  ➜   🎁 ₹1198
+✅ ₹1500  ➜   🎁 ₹1658
+✅ ₹2000  ➜   🎁 ₹2298
+✅ ₹2500  ➜   🎁 ₹2658
+✅ ₹3000  ➜   🎁 ₹3398
+✅ ₹3500  ➜   🎁 ₹3758
+✅ ₹4000  ➜   🎁 ₹4401
+✅ ₹4500  ➜   🎁 ₹4821
+✅ ₹5000  ➜   🎁 ₹5505
 
 ━━━━━━━━━━━━━━━━
 
@@ -92,15 +104,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ━━━━━━━━━━━━━━━━
 
-① Click Deposit (UPI)
+1️⃣ Click Deposit (UPI)
 
-② Select Amount
+2️⃣ Select Amount
 
-③ Pay Using UPI
+3️⃣ Pay Using UPI
 
-④ Send Payment Screenshot
+4️⃣ Send Payment Screenshot
 
-⑤ Balance Added After Verification ✅
+5️⃣ Balance Added After Verification ✅
 
 ━━━━━━━━━━━━━━━━
 
