@@ -14,7 +14,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         "🎉 WINPAY main apka swagat hai 🔥!\n\n"
-        "📝 Please enter your invitation code.",
+        "📝 Please enter your invitation code",
         parse_mode="Markdown",
     )
 
@@ -28,8 +28,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await update.message.reply_text(
             "🎉 Safal!
-✅ System ne aapki jankari safalta se save kar li hai.\n\n"
-            "👇 Kripya apna vikalp chunein.",
+✅ System ne aapki jankari safalta se save kar li hai\n\n"
+            "👇 Kripya apna vikalp chunein",
             parse_mode="Markdown",
             reply_markup=main_menu(),
         )
