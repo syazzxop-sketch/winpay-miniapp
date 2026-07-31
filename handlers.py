@@ -140,6 +140,10 @@ reply_markup=payment_menu()
 parse_mode="Markdown"
 )
 
+elif text == "📤 Send Screenshot":
+    await update.message.reply_text(
+        "📸 Please send your payment screenshot.\n\nVerification Time : 1-10 Minutes"
+    )
 elif text == "⬅️ Back":
     await update.message.reply_text(
         "🏠 Main Menu",
