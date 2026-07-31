@@ -13,8 +13,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["waiting_code"] = True
 
     await update.message.reply_text(
-        "🎉 *Welcome!*\n\n"
-        "🔑 Please Enter Your *Invitation Code*",
+        "🎉 WINPAY main apka swagat hai 🔥!\n\n"
+        "📝 Please enter your invitation code.",
         parse_mode="Markdown",
     )
 
@@ -27,9 +27,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["waiting_code"] = False
 
         await update.message.reply_text(
-            "✅ *Invitation Code Verified Successfully!*\n\n"
-            "💎 Welcome to *WinPay*.\n\n"
-            "👇 Please choose an option below.",
+            "🎉 Safal!
+✅ System ne aapki jankari safalta se save kar li hai.\n\n"
+            "👇 Kripya apna vikalp chunein.",
             parse_mode="Markdown",
             reply_markup=main_menu(),
         )
@@ -54,13 +54,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]:
 
         if text == "✅ ₹500":
-            bonus = "🎁 ₹598"
+            bonus = "🎁 +₹98"
 
         elif text == "✅ ₹1000":
-            bonus = "🎁 ₹1198"
+            bonus = "🎁 +₹198"
 
         else:
-            bonus = "🎁 ₹2398"
+            bonus = "🎁 +₹398"
 
         await update.message.reply_text(
             f"""💰 *Deposit {text.replace("✅ ","")}*
