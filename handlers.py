@@ -27,12 +27,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["waiting_code"] = False
 
         await update.message.reply_text(
-            "🎉 Safal!
-✅ System ne aapki jankari safalta se save kar li hai\n\n"
-            "👇 Kripya apna vikalp chunein",
-            parse_mode="Markdown",
-            reply_markup=main_menu(),
-        )
+    """🎉 Safal!
+
+✅ System ne aapki jankari safalta se save kar li hai.
+
+👇 Kripya apna vikalp chunein""",
+    parse_mode="Markdown",
+    reply_markup=main_menu(),
+)
         return
 
     # ==========================
@@ -66,8 +68,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         bonus = "🎁 +₹398"
 
-        await update.message.reply_text(
-            f"""💰 *Deposit {text.replace("✅ ","")}*
+    await update.message.reply_text(
+        f"""💰 *Deposit : {text.replace("✅ ","")}*
 {bonus}
 
 🏦 *UPI ID*
@@ -79,9 +81,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 3️⃣ Balance Added After Verification ✅
 """,
-            parse_mode="Markdown",
-            reply_markup=payment_menu(),
-        )
+        parse_mode="Markdown",
+        reply_markup=payment_menu(),
+    )
 
     # ==========================
     # Bonus Offers
@@ -94,7 +96,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ━━━━━━━━━━━━━━
 
-✅ ₹500   ➜   🎁 ₹598
+✅ ₹500  ➜   🎁 ₹598
 ✅ ₹1000 ➜   🎁 ₹1198
 ✅ ₹2000 ➜   🎁 ₹2298
 ✅ ₹2500 ➜   🎁 ₹2898
