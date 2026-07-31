@@ -102,5 +102,18 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Customer Support
     elif text == "🎧 Customer Support":
         await update.message.reply_text(
-            "@miss_AnjaliWS"
-        )
+"""🎧 *Customer Support*
+
+━━━━━━━━━━━━━━
+
+👤 Support Team
+
+👉 @miss_AnjaliWS
+
+⏰ Reply Time
+5–15 Minutes
+
+🙏 Please send your payment screenshot after deposit.
+""",
+parse_mode="Markdown"
+)
