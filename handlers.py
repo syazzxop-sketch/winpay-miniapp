@@ -1,7 +1,12 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from keyboards import main_menu
+from keyboards import (
+    main_menu,
+    deposit_menu,
+    payment_menu,
+    bonus_menu,
+)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
