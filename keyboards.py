@@ -13,10 +13,10 @@ def main_menu():
 # Deposit Amount Menu
 def deposit_menu():
     keyboard = [
-        ["✅ ₹500", "🎁 ₹598"],
-["✅ ₹1000", "🎁 ₹1198"],
-["✅ ₹2000", "🎁 ₹2298"],
-["✅ ₹2500", "🎁 ₹2698"],
+        ["✅ ₹500"],
+        ["✅ ₹1000"],
+        ["✅ ₹2000"],
+        ["✅ ₹2500"],
         ["⬅️ Back"]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
@@ -35,6 +35,6 @@ def payment_menu():
 # Bonus Menu
 def bonus_menu():
     keyboard = [
-        ["⬅️ Back"],
+        ["⬅️ Back"]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
