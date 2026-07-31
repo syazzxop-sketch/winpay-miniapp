@@ -28,7 +28,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await update.message.reply_text(
             "🎉 *Safal!*\n\n"
-            "✅ System ne aapki jankari safalta se save kar li hai. *\n",
+            "✅ *System ne aapki jankari safalta se save kar li hai. *\n",
             parse_mode="Markdown",
             reply_markup=main_menu()
         )
@@ -56,18 +56,12 @@ elif text in [
         f"""🎁 *Deposit : {amount}*
 
 🏦 UPI ID
-
 `mikacswinpay-1@oksbi`
 
-━━━━━━━━━━━━━━
-
 1️⃣ Pay the amount
+2️⃣ Send Screenshot
 
-2️⃣ Copy the UPI
-
-3️⃣ Send Screenshot
-
-✅ Balance will be added after verification.
+✅ Balance Added After Verification
 """,
         parse_mode="Markdown",
         reply_markup=payment_menu()
