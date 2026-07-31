@@ -48,36 +48,36 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif text in [
-        "✅ ₹500",
-        "✅ ₹1000",
-        "✅ ₹2000",
-    ]:
+    "✅ ₹500",
+    "✅ ₹1000",
+    "✅ ₹2000",
+    "✅ ₹2500",
+]:
 
-        if text == "✅ ₹500":
-            bonus = "🎁 +₹98"
+    if text == "✅ ₹500":
+        bonus = "🎁 +₹98"
 
-        elif text == "✅ ₹1000":
-            bonus = "🎁 +₹198"
+    elif text == "✅ ₹1000":
+        bonus = "🎁 +₹198"
 
-        else:
-            bonus = "🎁 +₹398"
+    elif text == "✅ ₹2000":
+        bonus = "🎁 +₹298"
+
+    else:
+        bonus = "🎁 +₹398"
 
         await update.message.reply_text(
             f"""💰 *Deposit {text.replace("✅ ","")}*
-
 {bonus}
 
 🏦 *UPI ID*
-
 `mikacswinpay-1@oksbi`
-
-━━━━━━━━━━━━━━
 
 1️⃣ Pay Using UPI
 
 2️⃣ Send Payment Screenshot
 
-✅ Balance Added After Verification
+3️⃣ Balance Added After Verification ✅
 """,
             parse_mode="Markdown",
             reply_markup=payment_menu(),
@@ -90,13 +90,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "🎁 Bonus Offers":
 
         await update.message.reply_text(
-            """🎉 *WINPAY BONUS OFFERS*
+            """🎉 *WINPAY Extra Bonus 🎊*
 
 ━━━━━━━━━━━━━━
 
 ✅ ₹500   ➜   🎁 ₹598
 ✅ ₹1000 ➜   🎁 ₹1198
-✅ ₹2000 ➜   🎁 ₹2398
+✅ ₹2000 ➜   🎁 ₹2298
+✅ ₹2500 ➜   🎁 ₹2898
 
 ━━━━━━━━━━━━━━
 
@@ -113,7 +114,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "💎 Premium":
 
         await update.message.reply_text(
-            "💎 *Premium*\n\n🚧 Coming Soon...",
+            "💎 *Premium*\n\n🚧 Coming Soon...‼️",
             parse_mode="Markdown",
         )
 
@@ -126,15 +127,17 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(
             """📖 *HOW TO DEPOSIT*
 
-① Click Deposit (UPI)
+━━━━━━━━━━━━━━
 
-② Select Amount
+1️⃣ Click Deposit (UPI)
 
-③ Pay Using UPI
+2️⃣ Select Amount
 
-④ Send Payment Screenshot
+3️⃣ Pay Using UPI
 
-⑤ Balance Added After Verification ✅
+4️⃣ Send Payment Screenshot
+
+5️⃣ Balance Added After Verification ✅
 
 ⚡ Fast • 🔒 Secure • 💎 Trusted
 """,
@@ -154,12 +157,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 👤 Support Team
 
-👉 @miss_ArjaliWS
+👉 @miss_AnjaliWS
 
 ⏱ Reply Time
 5–15 Minutes
 
-📸 Please send your payment screenshot after deposit.
+📥 Please send your payment screenshot after deposit.
 """,
             parse_mode="Markdown",
         )
@@ -171,7 +174,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif text == "📤 Send Screenshot":
 
         await update.message.reply_text(
-            "📸 Please send your payment screenshot.\n\n⏱ Verification Time: 1–10 Minutes"
+            "📥 Please send your payment screenshot.\n\n⏰ Verification Time: 1–10 Minutes"
         )
 
     # ==========================
