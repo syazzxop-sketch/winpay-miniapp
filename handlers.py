@@ -160,7 +160,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 👤 Support Team
 
-👉 {@miss_AnjaliWS}
+👉 @miss_AnjaliWS
 
 ⏰ Reply Time:
 5–15 Minutes
