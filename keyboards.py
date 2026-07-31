@@ -16,7 +16,6 @@ def deposit_menu():
         ["✅ ₹500"],
         ["✅ ₹1000"],
         ["✅ ₹2000"],
-        ["✅ ₹2500"],
         ["⬅️ Back"]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
