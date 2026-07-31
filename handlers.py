@@ -13,8 +13,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["waiting_code"] = True
 
     await update.message.reply_text(
-        "🎉 WINPAY main apka swagat hai 🔥!\n\n"
-        "📝 Please enter your invitation code",
+        "🎉 WINPAY mein aapka swagat hai! 🔥\n\n"
+        "📝 Please enter your invitation code.",
         parse_mode="Markdown",
     )
 
@@ -27,19 +27,20 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["waiting_code"] = False
 
         await update.message.reply_text(
-    """🎉 Safal!
+            """🎉 *Safal!*
 
-✅ System ne aapki jankari safalta se save kar li hai.
+✅ System ne aapka invitation code verify kar liya hai.
 
-👇 Kripya apna vikalp chunein""",
-    parse_mode="Markdown",
-    reply_markup=main_menu(),
-)
+👇 Kripya niche se ek option chune.
+""",
+            parse_mode="Markdown",
+            reply_markup=main_menu(),
+        )
         return
 
-    # ==========================
-    # Deposit Menu
-    # ==========================
+    # =========================
+    # Deposit
+    # =========================
 
     if text == "⚡ Deposit (UPI)":
 
@@ -50,34 +51,30 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif text in [
-    "✅ ₹500",
-    "✅ ₹1000",
-    "✅ ₹2000",
-    "✅ ₹2500",
-]:
+        "✅ ₹500",
+        "✅ ₹1000",
+        "✅ ₹2000",
+        "✅ ₹2500",
+    ]:
 
-    if text == "✅ ₹500":
-        bonus = "🎁 +₹98"
+        if text == "✅ ₹500":
+            bonus = "🎁 +₹98"
 
-    elif text == "✅ ₹1000":
-        bonus = "🎁 +₹198"
+        elif text == "✅ ₹1000":
+            bonus = "🎁 +₹198"
 
-    elif text == "✅ ₹2000":
-        bonus = "🎁 +₹398"
+        elif text == "✅ ₹2000":
+            bonus = "🎁 +₹298"
 
-    else:
-        bonus = "🎁 +₹498"
+        else:
+            bonus = "🎁 +₹398"
 
-    await update.message.reply_text(
-        f"""💰 *Deposit : {text.replace("✅ ","")}*
-
+        await update.message.reply_text(
+            f"""💰 *Deposit : {text.replace("✅ ","")}*
 {bonus}
 
 🏦 *UPI ID*
-
 `mikacswinpay-1@oksbi`
-
-━━━━━━━━━━━━━━
 
 1️⃣ Pay Using UPI
 
@@ -85,74 +82,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 3️⃣ Balance Added After Verification ✅
 """,
-        parse_mode="Markdown",
-        reply_markup=payment_menu(),
-    )
-
-    # ==========================
-    # Bonus Offers
-    # ==========================
-
-    elif text == "🎁 Bonus Offers":
-
-        await update.message.reply_text(
-            """🎉 *WINPAY Extra Bonus 🎊*
-
-━━━━━━━━━━━━━━
-
-✅ ₹500  ➜   🎁 ₹598
-✅ ₹1000 ➜   🎁 ₹1198
-✅ ₹2000 ➜   🎁 ₹2298
-✅ ₹2500 ➜   🎁 ₹2898
-
-━━━━━━━━━━━━━━
-
-⚡ Fast • 🔒 Secure • 💎 Trusted
-""",
             parse_mode="Markdown",
-            reply_markup=bonus_menu(),
+            reply_markup=payment_menu(),
         )
 
-    # ==========================
-    # Premium
-    # ==========================
 
-    elif text == "💎 Premium":
 
-        await update.message.reply_text(
-            "💎 *Premium*\n\n🚧 Coming Soon...‼️",
-            parse_mode="Markdown",
-        )
-
-    # ==========================
-    # How To Deposit
-    # ==========================
-
-    elif text == "📖 How To Deposit":
-
-        await update.message.reply_text(
-            """📖 *HOW TO DEPOSIT*
-
-━━━━━━━━━━━━━━
-
-1️⃣ Click Deposit (UPI)
-
-2️⃣ Select Amount
-
-3️⃣ Pay Using UPI
-
-4️⃣ Send Payment Screenshot
-
-5️⃣ Balance Added After Verification ✅
-
-⚡ Fast • 🔒 Secure • 💎 Trusted
-""",
-            parse_mode="Markdown",
-        )
-
-    # ==========================
+    # =========================
     # Customer Support
-    # ==========================
+    # =========================
 
     elif text == "🎧 Customer Support":
 
@@ -165,27 +103,29 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 👉 @miss_AnjaliWS
 
-⏱ Reply Time
+⏰ Reply Time:
 5–15 Minutes
 
-📥 Please send your payment screenshot after deposit.
+📥 Payment karne ke baad screenshot yahin bheje.
 """,
             parse_mode="Markdown",
         )
 
-    # ==========================
+    # =========================
     # Send Screenshot
-    # ==========================
+    # =========================
 
     elif text == "📤 Send Screenshot":
 
         await update.message.reply_text(
-            "📥 Please send your payment screenshot.\n\n⏰ Verification Time: 1–10 Minutes"
+            """📥 Please send your payment screenshot.
+
+⏰ Verification Time: 1–10 Minutes""",
         )
 
-    # ==========================
+    # =========================
     # Back
-    # ==========================
+    # =========================
 
     elif text == "⬅️ Back":
 
@@ -194,6 +134,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             parse_mode="Markdown",
             reply_markup=main_menu(),
         )
+
+    # =========================
+    # Invalid Option
+    # =========================
 
     else:
 
