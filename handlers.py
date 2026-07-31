@@ -13,8 +13,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["waiting_code"] = True
 
     await update.message.reply_text(
-        "🎉 WINPAY mein aapka swagat hai! 🔥\n\n"
-        "📝 Please enter your invitation code.",
+        "🎉 *WINPAY mein aapka swagat hai!* 💚\n\n"
+        "📝 Please enter your invitation code to verify.",
         parse_mode="Markdown",
     )
 
