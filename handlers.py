@@ -53,15 +53,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif text in [
-        "✅ ₹500",
-        "✅ ₹1000",
-        "✅ ₹2000",
+        "₹500 ✅",
+        "₹1000 ✅",
+        "₹2000 ✅",
     ]:
 
-        if text == "✅ ₹500":
+        if text == "₹500 ✅":
             bonus = "🎁 +₹98"
 
-        elif text == "✅ ₹1000":
+        elif text == "₹1000 ✅":
             bonus = "🎁 +₹198"
 
         else:
@@ -69,11 +69,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await update.message.reply_text(
             f"""💰 *Deposit : {text.replace("✅ ", "")}*
-
 {bonus}
 
 🏦 *UPI ID*
-
 `{UPI_ID}`
 
 1️⃣ Pay Using UPI
@@ -101,7 +99,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ✅ Deposit ₹2000 → Get ₹2298
 
-💚 Bonus is added after successful payment. ✅
+💚 Bonus is added after successful payment.✅
 """,
             parse_mode="Markdown",
             reply_markup=bonus_menu(),
@@ -162,7 +160,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 👤 Support Team
 
-👉 {SUPPORT_USERNAME}
+👉 {@miss_AnjaliWS}
 
 ⏰ Reply Time:
 5–15 Minutes
