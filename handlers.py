@@ -36,12 +36,24 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Deposit
     if text == "⚡ Deposit (UPI)":
-    elif text in ["🎁 ₹500+98","🎁 ₹1000+198","🎁 ₹2000+298","🎁 ₹3000+398","🎁 ₹4000+401","🎁 ₹5000+505"]:
+    await update.message.reply_text(
+        "💰 *Select Deposit Amount*",
+        parse_mode="Markdown",
+        reply_markup=deposit_menu()
+    )
 
-    amount = text.replace("🎁 ","")
+elif text in [
+    "🎁 ₹500+98",
+    "🎁 ₹1000+198",
+    "🎁 ₹2000+298",
+    "🎁 ₹3000+398",
+    "🎁 ₹4000+401",
+    "🎁 ₹5000+505",
+]:
+    amount = text.replace("🎁 ", "")
 
     await update.message.reply_text(
-f"""🎁 *Deposit : {amount}*
+        f"""🎁 *Deposit : {amount}*
 
 🏦 UPI ID
 
@@ -49,17 +61,17 @@ f"""🎁 *Deposit : {amount}*
 
 ━━━━━━━━━━━━━━
 
-1️⃣ Pay the amount.
+1️⃣ Pay the amount
 
-2️⃣ Copy the UPI.
+2️⃣ Copy the UPI
 
-3️⃣ Send Screenshot.
+3️⃣ Send Screenshot
 
-✅ Balance will be added after verification @miss_AnjaliWS thank you .
+✅ Balance will be added after verification.
 """,
-parse_mode="Markdown",
-reply_markup=payment_menu()
-)
+        parse_mode="Markdown",
+        reply_markup=payment_menu()
+    )
 
     # Bonus
     elif text == "🎁 Bonus Offers":
@@ -81,9 +93,9 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━━━
 
-🔥 *Bonus credited after successful verification.*
+🔥 Bonus credited after successful verification.
 
-🔒 *Safe* • ⚡ *Fast* • 💯 *Trusted*
+🔒 Safe • ⚡ Fast • 💯 Trusted
 """,
             parse_mode="Markdown"
         )
@@ -91,7 +103,7 @@ reply_markup=payment_menu()
     # Premium
     elif text == "💎 Premium":
         await update.message.reply_text(
-            "💎 *Premium*\n\n⏰ *Coming Soon...* 🙌🏻",
+            "💎 *Premium*\n\n⏰ Coming Soon... 🙌🏻",
             parse_mode="Markdown"
         )
 
@@ -102,19 +114,19 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━━━
 
-1️⃣ *Click Deposit (UPI)*
+1️⃣ Click Deposit (UPI)
 
-2️⃣ *Select Amount*
+2️⃣ Select Amount
 
-3️⃣ *Pay Using UPI*
+3️⃣ Pay Using UPI
 
-4️⃣ *Send Payment Screenshot*
+4️⃣ Send Payment Screenshot
 
-5️⃣ *Balance Added After Verification* ✅
+5️⃣ Balance Added After Verification ✅
 
 ━━━━━━━━━━━━━━━━
 
-⚡ *Fast* • 🔒 *Secure* • 💎 *Trusted*
+⚡ Fast • 🔒 Secure • 💎 Trusted
 """,
             parse_mode="Markdown"
         )
@@ -126,21 +138,21 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━
 
-👤 *Support Team*
+👤 Support Team
 
 👉 @miss_AnjaliWS
 
-⏰ *Reply Time
-5–15 Minutes*
+⏰ Reply Time
+5–15 Minutes
 
-🙏 *Please send your payment screenshot after deposit.*
+🙏 Please send your payment screenshot after deposit.
 """,
 parse_mode="Markdown"
 )
 
-elif text == "📤 *Send Screenshot*":
+elif text == "📤 Send Screenshot":
     await update.message.reply_text(
-        "📸 *Please send your payment screenshot.*\n\n*Verification Time* : *1-10 Minutes*"
+        "📸 Please send your payment screenshot.\n\nVerification Time : 1-10 Minutes"
     )
 elif text == "⬅️ Back":
     await update.message.reply_text(
