@@ -5,8 +5,12 @@ from telegram.ext import (
     filters,
 )
 
-from config import BOT_TOKEN
-from handlers import start, handle_message
+import asyncio
+
+try:
+    asyncio.get_event_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
 
 
 def main():
