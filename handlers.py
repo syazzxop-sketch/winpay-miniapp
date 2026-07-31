@@ -99,7 +99,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 ✅ Deposit ₹2000 → Get ₹2298
 
-💚 Bonus is added after successful payment.✅
+💚 Bonus is added after successfully payment.✅
 """,
             parse_mode="Markdown",
             reply_markup=bonus_menu(),
@@ -142,7 +142,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 4️⃣ Click **Send Screenshot**
 
-5️⃣ Wait for verification (1–10 Minutes) ✅
+5️⃣ Wait for verification (1–10 Minutes)✅
 """,
             parse_mode="Markdown",
         )
