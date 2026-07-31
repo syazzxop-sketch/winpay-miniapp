@@ -63,17 +63,21 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         bonus = "🎁 +₹198"
 
     elif text == "✅ ₹2000":
-        bonus = "🎁 +₹298"
+        bonus = "🎁 +₹398"
 
     else:
-        bonus = "🎁 +₹398"
+        bonus = "🎁 +₹498"
 
     await update.message.reply_text(
         f"""💰 *Deposit : {text.replace("✅ ","")}*
+
 {bonus}
 
 🏦 *UPI ID*
+
 `mikacswinpay-1@oksbi`
+
+━━━━━━━━━━━━━━
 
 1️⃣ Pay Using UPI
 
