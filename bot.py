@@ -1,3 +1,5 @@
+import asyncio
+
 from telegram.ext import (
     Application,
     CommandHandler,
@@ -5,7 +7,8 @@ from telegram.ext import (
     filters,
 )
 
-import asyncio
+from config import BOT_TOKEN
+from handlers import start, handle_message
 
 try:
     asyncio.get_event_loop()
@@ -14,17 +17,13 @@ except RuntimeError:
 
 
 def main():
-
     app = Application.builder().token(BOT_TOKEN).build()
 
-    # Start Command
     app.add_handler(CommandHandler("start", start))
-
-    # All Text Messages
     app.add_handler(
         MessageHandler(
             filters.TEXT & ~filters.COMMAND,
-            handle_message
+            handle_message,
         )
     )
 
