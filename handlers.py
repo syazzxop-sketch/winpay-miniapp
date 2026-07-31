@@ -82,6 +82,46 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=payment_menu(),
         )
 
+        elif text == "🎁 Bonus Offers":
+    await update.message.reply_text(
+        """🎉 *WINPAY Bonus offers 🎊*
+
+✅ Deposit ₹500  → Get ₹598
+✅ Deposit ₹1000 → Get ₹1198
+✅ Deposit ₹2000 → Get ₹2298
+
+💚 Bonus is added after successful payment.✅""",
+        parse_mode="Markdown",
+        reply_markup=bonus_menu(),
+    )
+
+elif text == "💎 Premium":
+    await update.message.reply_text(
+        """💎 *WINPAY Premium*
+
+⭐ Fast Verification
+⭐ Priority Support
+⭐ Exclusive Offers
+
+Contact support to activate Premium.""",
+        parse_mode="Markdown",
+    )
+
+elif text == "📖 How To Deposit":
+    await update.message.reply_text(
+        """📖 *How To Deposit*
+
+1️⃣ Click Deposit (UPI)
+
+2️⃣ Select Amount
+
+3️⃣ Pay using the UPI ID
+
+4️⃣ Click 'Send Screenshot'
+
+5️⃣ Wait for verification (1–10 min)✅""",
+        parse_mode="Markdown",
+    )
 
 
     # =========================
