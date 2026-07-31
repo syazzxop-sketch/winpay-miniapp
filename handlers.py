@@ -139,3 +139,9 @@ reply_markup=payment_menu()
 """,
 parse_mode="Markdown"
 )
+
+elif text == "⬅️ Back":
+    await update.message.reply_text(
+        "🏠 Main Menu",
+        reply_markup=main_menu()
+    )
