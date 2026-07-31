@@ -84,13 +84,14 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         elif text == "🎁 Bonus Offers":
     await update.message.reply_text(
-        """🎉 *WINPAY Bonus offers 🎊*
+        """🎉 *WINPAY Bonus Offers* 🎊
 
 ✅ Deposit ₹500  → Get ₹598
 ✅ Deposit ₹1000 → Get ₹1198
 ✅ Deposit ₹2000 → Get ₹2298
 
-💚 Bonus is added after successful payment.✅""",
+💚 Bonus is added after successful payment. ✅
+""",
         parse_mode="Markdown",
         reply_markup=bonus_menu(),
     )
@@ -103,7 +104,8 @@ elif text == "💎 Premium":
 ⭐ Priority Support
 ⭐ Exclusive Offers
 
-Contact support to activate Premium.""",
+Contact support to activate Premium.
+""",
         parse_mode="Markdown",
     )
 
@@ -119,7 +121,8 @@ elif text == "📖 How To Deposit":
 
 4️⃣ Click 'Send Screenshot'
 
-5️⃣ Wait for verification (1–10 min)✅""",
+5️⃣ Wait for verification (1–10 Minutes) ✅
+""",
         parse_mode="Markdown",
     )
 
