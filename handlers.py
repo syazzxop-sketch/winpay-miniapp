@@ -38,11 +38,16 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Deposit
     if text == "⚡ Deposit (UPI)":
+    await update.message.reply_text(
+        "💰 *Select Deposit Amount*",
+        parse_mode="Markdown",
+        reply_markup=deposit_menu()
+    )
         await update.message.reply_text(
             "⚡ *Deposit (UPI)*\n\n"
-            "UPI ID:\n"
-            "`winpay@upi`\n\n"
-            "✅ Send Payment Screenshot to Customer Support.",
+            "🏦 UPI ID:\n"
+            "`mikacswinpay-1@oksbi`\n\n"
+            "✅ Send Payment Screenshot to Customer Support. @miss_AnjaliWS",
             parse_mode="Markdown"
         )
 
