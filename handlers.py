@@ -28,14 +28,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await update.message.reply_text(
             "🎉 *Safal!*\n\n"
-            "✅ *System ne aapki jankari safalta se save kar li hai. *\n",
+            "✅ System ne aapki jankari safalta se save kar li hai. \n",
             parse_mode="Markdown",
             reply_markup=main_menu()
         )
         return
 
     # Deposit
-    if text == "⚡ Deposit (UPI)":
+    # Deposit
+if text == "⚡ Deposit (UPI)":
     await update.message.reply_text(
         "💰 *Select Deposit Amount*",
         parse_mode="Markdown",
