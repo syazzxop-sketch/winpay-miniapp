@@ -13,9 +13,9 @@ def main_menu():
 # Deposit Amount Menu
 def deposit_menu():
     keyboard = [
-        ["💰 ₹100", "💰 ₹200"],
-        ["💰 ₹500", "💰 ₹1000"],
-        ["💰 ₹2000", "💰 ₹5000"],
+        ["✅ ₹500", "🎁 ₹598"],
+        ["✅ ₹1000", "🎁 ₹1198"],
+        ["✅ ₹2000", "🎁 ₹2398"],
         ["⬅️ Back"]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
