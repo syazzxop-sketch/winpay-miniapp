@@ -13,8 +13,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["waiting_code"] = True
 
     await update.message.reply_text(
-        "🎉 *Welcome!*\n\n"
-        "🔑 Please Enter Your *Invitation Code:*",
+        "💎 *WINPAY main apka swagat hai 🔥*\n\n"
+        "📝 *Please submit personal invitation code.*",
         parse_mode="Markdown"
     )
 
@@ -27,10 +27,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context.user_data["waiting_code"] = False
 
         await update.message.reply_text(
-            "✅ *Success!*\n\n"
-            "🎉 Invitation Code Verified Successfully.\n"
-            "💎 Welcome to *WinPay*.\n\n"
-            "👇 Please choose an option below.",
+            "🎉 *Safal!*\n\n"
+            "✅ System ne aapki jankari safalta se save kar li hai. *\n",
             parse_mode="Markdown",
             reply_markup=main_menu()
         )
@@ -38,12 +36,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Deposit
     if text == "⚡ Deposit (UPI)":
-    elif text in ["💰 ₹500+98","💰 ₹1000+198","💰 ₹2000+298","💰 ₹3000+398","💰 ₹4000+401","💰 ₹5000+505"]:
+    elif text in ["🎁 ₹500+98","🎁 ₹1000+198","🎁 ₹2000+298","🎁 ₹3000+398","🎁 ₹4000+401","🎁 ₹5000+505"]:
 
-    amount = text.replace("💰 ","")
+    amount = text.replace("🎁 ","")
 
     await update.message.reply_text(
-f"""💰 *Deposit : {amount}*
+f"""🎁 *Deposit : {amount}*
 
 🏦 UPI ID
 
@@ -66,7 +64,7 @@ reply_markup=payment_menu()
     # Bonus
     elif text == "🎁 Bonus Offers":
         await update.message.reply_text(
-            """🎁 *WINPAY BONUS OFFERS*
+            """🎉 *WINPAY Extra Bonus*
 
 ━━━━━━━━━━━━━━━━
 
@@ -83,9 +81,9 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━━━
 
-🔥 Bonus credited after successful verification.
+🔥 *Bonus credited after successful verification.*
 
-🔒 Safe • ⚡ Fast • 💯 Trusted
+🔒 *Safe* • ⚡ *Fast* • 💯 *Trusted*
 """,
             parse_mode="Markdown"
         )
@@ -93,7 +91,7 @@ reply_markup=payment_menu()
     # Premium
     elif text == "💎 Premium":
         await update.message.reply_text(
-            "💎 *Premium*\n\n🚧 Coming Soon...",
+            "💎 *Premium*\n\n⏰ *Coming Soon...* 🙌🏻",
             parse_mode="Markdown"
         )
 
@@ -104,19 +102,19 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━━━
 
-1️⃣ Click Deposit (UPI)
+1️⃣ *Click Deposit (UPI)*
 
-2️⃣ Select Amount
+2️⃣ *Select Amount*
 
-3️⃣ Pay Using UPI
+3️⃣ *Pay Using UPI*
 
-4️⃣ Send Payment Screenshot
+4️⃣ *Send Payment Screenshot*
 
-5️⃣ Balance Added After Verification ✅
+5️⃣ *Balance Added After Verification* ✅
 
 ━━━━━━━━━━━━━━━━
 
-⚡ Fast • 🔒 Secure • 💎 Trusted
+⚡ *Fast* • 🔒 *Secure* • 💎 *Trusted*
 """,
             parse_mode="Markdown"
         )
@@ -128,21 +126,21 @@ reply_markup=payment_menu()
 
 ━━━━━━━━━━━━━━
 
-👤 Support Team
+👤 *Support Team*
 
 👉 @miss_AnjaliWS
 
-⏰ Reply Time
-5–15 Minutes
+⏰ *Reply Time
+5–15 Minutes*
 
-🙏 Please send your payment screenshot after deposit.
+🙏 *Please send your payment screenshot after deposit.*
 """,
 parse_mode="Markdown"
 )
 
-elif text == "📤 Send Screenshot":
+elif text == "📤 *Send Screenshot*":
     await update.message.reply_text(
-        "📸 Please send your payment screenshot.\n\nVerification Time : 1-10 Minutes"
+        "📸 *Please send your payment screenshot.*\n\n*Verification Time* : *1-10 Minutes*"
     )
 elif text == "⬅️ Back":
     await update.message.reply_text(
