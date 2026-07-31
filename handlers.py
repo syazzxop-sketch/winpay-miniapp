@@ -8,6 +8,8 @@ from keyboards import (
     bonus_menu,
 )
 
+from config import UPI_ID, SUPPORT_USERNAME
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["waiting_code"] = True
@@ -51,26 +53,28 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
     elif text in [
-        "₹500 ✅",
-        "₹1000 ✅",
-        "₹2000 ✅",
+        "✅ ₹500",
+        "✅ ₹1000",
+        "✅ ₹2000",
     ]:
 
-        if text == "₹500 ✅":
+        if text == "✅ ₹500":
             bonus = "🎁 +₹98"
 
-        elif text == "₹1000 ✅":
+        elif text == "✅ ₹1000":
             bonus = "🎁 +₹198"
 
-        elif text == "₹2000 ✅":
+        else:
             bonus = "🎁 +₹298"
 
         await update.message.reply_text(
-            f"""💰 *Deposit : {text.replace("✅ ","")}*
+            f"""💰 *Deposit : {text.replace("✅ ", "")}*
+
 {bonus}
 
 🏦 *UPI ID*
-`mikacswinpay-1@oksbi`
+
+`{UPI_ID}`
 
 1️⃣ Pay Using UPI
 
@@ -82,50 +86,68 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=payment_menu(),
         )
 
-        elif text == "🎁 Bonus Offers":
-    await update.message.reply_text(
-        """🎉 *WINPAY Bonus Offers* 🎊
+    # =========================
+    # Bonus Offers
+    # =========================
+
+    elif text == "🎁 Bonus Offers":
+
+        await update.message.reply_text(
+            """🎉 *WINPAY Bonus Offers* 🎊
 
 ✅ Deposit ₹500  → Get ₹598
+
 ✅ Deposit ₹1000 → Get ₹1198
+
 ✅ Deposit ₹2000 → Get ₹2298
 
 💚 Bonus is added after successful payment. ✅
 """,
-        parse_mode="Markdown",
-        reply_markup=bonus_menu(),
-    )
+            parse_mode="Markdown",
+            reply_markup=bonus_menu(),
+        )
 
-elif text == "💎 Premium":
-    await update.message.reply_text(
-        """💎 *WINPAY Premium*
+    # =========================
+    # Premium
+    # =========================
+
+    elif text == "💎 Premium":
+
+        await update.message.reply_text(
+            """💎 *WINPAY Premium*
 
 ⭐ Fast Verification
+
 ⭐ Priority Support
+
 ⭐ Exclusive Offers
 
-Contact support to activate Premium.
+📞 Contact support to activate Premium.
 """,
-        parse_mode="Markdown",
-    )
+            parse_mode="Markdown",
+        )
 
-elif text == "📖 How To Deposit":
-    await update.message.reply_text(
-        """📖 *How To Deposit*
+    # =========================
+    # How To Deposit
+    # =========================
 
-1️⃣ Click Deposit (UPI)
+    elif text == "📖 How To Deposit":
 
-2️⃣ Select Amount
+        await update.message.reply_text(
+            """📖 *How To Deposit*
 
-3️⃣ Pay using the UPI ID
+1️⃣ Click **Deposit (UPI)**
 
-4️⃣ Click 'Send Screenshot'
+2️⃣ Select Deposit Amount
+
+3️⃣ Pay using the given UPI ID
+
+4️⃣ Click **Send Screenshot**
 
 5️⃣ Wait for verification (1–10 Minutes) ✅
 """,
-        parse_mode="Markdown",
-    )
-
+            parse_mode="Markdown",
+        )
 
     # =========================
     # Customer Support
@@ -134,13 +156,13 @@ elif text == "📖 How To Deposit":
     elif text == "🎧 Customer Support":
 
         await update.message.reply_text(
-            """🎧 *Customer Support*
+            f"""🎧 *Customer Support*
 
 ━━━━━━━━━━━━━━
 
 👤 Support Team
 
-👉 @miss_AnjaliWS
+👉 {SUPPORT_USERNAME}
 
 ⏰ Reply Time:
 5–15 Minutes
@@ -157,9 +179,14 @@ elif text == "📖 How To Deposit":
     elif text == "📤 Send Screenshot":
 
         await update.message.reply_text(
-            """📥 Please send your payment screenshot.
+            """📤 *Send Payment Screenshot*
 
-⏰ Verification Time: 1–10 Minutes""",
+✅ Please send your payment screenshot here.
+
+⏰ Verification Time:
+1–10 Minutes
+""",
+            parse_mode="Markdown",
         )
 
     # =========================
@@ -184,3 +211,4 @@ elif text == "📖 How To Deposit":
             "❌ Invalid option.\n\nPlease choose an option from the menu.",
             reply_markup=main_menu(),
         )
+
