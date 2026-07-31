@@ -9,7 +9,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         "🎉 *Welcome!*\n\n"
-        "🔑 Please enter your *Invitation Code:*",
+        "🔑 Please Enter Your *Invitation Code:*",
         parse_mode="Markdown"
     )
 
