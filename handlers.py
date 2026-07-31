@@ -14,7 +14,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(
         "🎉 *WINPAY mein aapka swagat hai!* 💚\n\n"
-        "📝 Please enter your invitation code to verify.",
+        "📝 Please enter your invitation code.",
         parse_mode="Markdown",
     )
 
